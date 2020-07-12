@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
 
+function RewardsButton({company, progress, outOf, onPress = f => f}){
+  return (
+    <TouchableHighlight 
+      style={styles.button}
+      onPress={()=>onPress("Hulu")}
+      underlayColor="skyblue"
+    >
+      <View>
+        <Text style={styles.buttonTitle}>{company}</Text>
+        <Text style={styles.buttonText}>{progress}/{outOf} Cups</Text>
+      </View>
+    </TouchableHighlight>
+  )
+}
+
 export default function App() {
-  const [rewardCompany, setRewardCompany] = useState();
+  const [company, setCompany] = useState();
   return (
     <View style={styles.container}>
-      <TouchableHighlight style={styles.button}>
-        <View>
-          <Text style={styles.buttonTitle}>Starbucks</Text>
-          <Text style={styles.buttonText}>6/10 Cups</Text>
-        </View>
-      </TouchableHighlight>
+      <RewardsButton company="Starbucks" progress="0" outOf="10" onPress={setCompany} />
     </View>
   );
 }
@@ -23,14 +33,14 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   button: {
-    height: 100,
+    height: 150,
     margin: 10,
     padding: 10,
     borderWidth: 2,
     borderRadius: 10,
     justifyContent: "top",
     alignSelf: "stretch",
-    background:"linear-gradient(150deg, white 50%,green)"
+    backgroundColor: "rgba(255,255,255,0.8)"
   },
   buttonTitle:{
     fontSize: 30,
