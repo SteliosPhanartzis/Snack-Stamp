@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { StyleSheet, ScrollView } from "react-native";
-import RewardsButton from "./components/RewardsButton";
+import React from "react";
+import RewardsList from "./components/RewardsList";
+// import ColorDetails from "./components/ColorDetails";
+import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
+
+const { Navigator, Screen } = createStackNavigator();
 
 export default function App() {
-  const [company, setCompany] = useState();
   return (
-    <ScrollView style={styles.container}>
-      <RewardsButton company="Starbucks" progress="0" outOf="10" onPress={setCompany} />
-    </ScrollView>
+    <NavigationContainer>
+      <Navigator>
+        <Screen 
+          name="Home" 
+          options={{ title: "Rewards List" }}
+          component={RewardsList}
+        />
+      </Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  }
-});

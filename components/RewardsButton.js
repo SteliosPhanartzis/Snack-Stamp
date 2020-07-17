@@ -39,7 +39,7 @@ export default function RewardsButton({company, progress, outOf, onPress = f => 
       flexDirection: "row"
     },
     buttonTitle:{
-      fontSize: 30,
+      fontSize: 24,
       textAlign: "left",
       marginTop: 5
     },
