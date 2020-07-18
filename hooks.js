@@ -29,5 +29,13 @@ export const useRewards = () => {
     const newReward = { id: generate(), company, progress, outOf };
     setRewards([newReward, ...rewards]);
   };
-  return{ rewards, addReward }
+  const deleteReward = company => {
+    // try {
+    //   AsyncStorage.removeItem("@RewardListStore:Rewards", company.id);
+    // }
+    // catch(exception) {
+    // }
+    setRewards([...rewards]);
+  }
+  return{ rewards, addReward, deleteReward }
 };

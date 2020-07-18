@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableHighlight, Image } from "react-native";
-
 export default function RewardsButton({company, progress, outOf, onPress = f => f}){
     return (
       <TouchableHighlight 

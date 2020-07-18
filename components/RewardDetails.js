@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text, Image} from "react-native";
+import { StyleSheet, View, Text, Image, Button, Alert} from "react-native";
+import RewardDeleteAlert from "./RewardDeleteAlert"
 
 export default function RewardDetails({ route }) {
     const { reward: name } = route.params;
@@ -10,6 +11,7 @@ export default function RewardDetails({ route }) {
                 <Image style={styles.barcode} source={{uri:"https://i.ytimg.com/vi/pejCtEKRjZ4/maxresdefault.jpg"}} />
                 <Text style={styles.detailsText}>{name.progress} / {name.outOf} stamps collected</Text>
             </View>
+            <Button title="Delete Reward" onPress = {RewardDeleteAlert}/>
         </>
     )
 }
@@ -30,5 +32,5 @@ const styles = StyleSheet.create({
     barcode: {
         width: "70%",
         height: "15%"
-    }
+    },
   });
