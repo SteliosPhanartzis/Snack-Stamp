@@ -25,8 +25,8 @@ export const useRewards = () => {
   }, [rewards])
 
   const addReward = company => {
-    let progress = 0, outOf = 10;
-    const newReward = { id: generate(), company, progress, outOf };
+    let progress = 0, outOf = 10, logo="https://reactnative.dev/img/tiny_logo.png";
+    const newReward = { id: generate(), company, progress, outOf, logo };
     setRewards([newReward, ...rewards]);
   };
   const deleteReward = company => {

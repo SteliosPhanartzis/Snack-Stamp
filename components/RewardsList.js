@@ -12,13 +12,19 @@ export default function RewardsList({ navigation }) {
   return (
       <>
         <FlatList 
-        style={styles.container}
-        data={rewards}
-        renderItem={({item}) => {
-            return (
-            <RewardsButton key={item.id} company={item.company} progress={item.progress} outOf={item.outOf} onPress={() => navigation.navigate("Details", { reward: item })} />
-            )
-        }}
+          style={styles.container}
+          data={rewards}
+          renderItem={({item}) => {
+              return (
+              <RewardsButton key={item.id} 
+                company={item.company} 
+                progress={item.progress} 
+                outOf={item.outOf}
+                logo={item.logo} 
+                onPress={() => navigation.navigate("Details", { reward: item })} 
+              />
+              )
+          }}
         />
         {/* <TouchableHighlight 
             style={styles.addReward} 

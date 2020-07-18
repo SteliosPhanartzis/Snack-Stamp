@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, Button, Alert} from "react-native";
+import { StyleSheet, View, Text, Image, Button } from "react-native";
 import RewardDeleteAlert from "./RewardDeleteAlert"
 
 export default function RewardDetails({ route }) {

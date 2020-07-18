@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableHighlight, Image } from "react-native";
-export default function RewardsButton({company, progress, outOf, onPress = f => f}){
+export default function RewardsButton({company, progress, outOf, logo, onPress = f => f}){
     return (
       <TouchableHighlight 
         style={styles.button}
@@ -8,7 +8,7 @@ export default function RewardsButton({company, progress, outOf, onPress = f => 
         underlayColor="skyblue"
       >
         <View style={styles.columnAlign}>
-          <Image style={styles.tinyLogo} source={{uri:"https://reactnative.dev/img/tiny_logo.png"}}/>
+          <Image style={styles.tinyLogo} source={{uri:logo}}/>
           <View>
             <Text style={styles.buttonTitle}>{company}</Text>
             <Text style={styles.buttonText}>{progress}/{outOf} Cups</Text>

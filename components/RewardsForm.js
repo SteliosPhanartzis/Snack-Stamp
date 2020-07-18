@@ -16,11 +16,13 @@ export default function RewardForm() {
               autoCapitalize="none"
               placeholder="enter a reward..." 
             />
-            <Button title="add" onPress={() => {
-              input.current.blur();
-              addReward(inputValue);
-              setValue("")
-            }}/>
+            <Button title="add" 
+              onPress={() => {
+                input.current.blur();
+                addReward(inputValue);
+                setValue("")
+              }}
+            />
         </View>
     );
 }
