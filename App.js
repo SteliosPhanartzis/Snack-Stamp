@@ -1,8 +1,9 @@
 import React from "react";
 import RewardsList from "./components/RewardsList";
-// import ColorDetails from "./components/ColorDetails";
+import RewardsForm from "./components/RewardsForm";
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
+import AddRewardButton from "./components/AddRewardButton";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -12,8 +13,20 @@ export default function App() {
       <Navigator>
         <Screen 
           name="Home" 
-          options={{ title: "Rewards List" }}
+          options={
+            ({navigation}) => ({
+              title: "Rewards List",
+              headerRight: () => (
+              <AddRewardButton onNavigate = {navigation}/>
+              ),
+            })
+          }
           component={RewardsList}
+        />
+        <Screen 
+          name="Add Reward" 
+          options={{ title: "Add Reward" }}
+          component={RewardsForm}
         />
       </Navigator>
     </NavigationContainer>
