@@ -16,7 +16,7 @@ export default function RewardsList({ navigation }) {
         data={rewards}
         renderItem={({item}) => {
             return (
-            <RewardsButton key={item.id} company={item.company} progress={item.progress} outOf={item.outOf} onPress={() => {}} />
+            <RewardsButton key={item.id} company={item.company} progress={item.progress} outOf={item.outOf} onPress={() => navigation.navigate("Details", { reward: item })} />
             )
         }}
         />

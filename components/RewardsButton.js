@@ -5,7 +5,7 @@ export default function RewardsButton({company, progress, outOf, onPress = f => 
     return (
       <TouchableHighlight 
         style={styles.button}
-        onPress={()=>onPress("Hulu")}
+        onPress={()=>onPress()}
         underlayColor="skyblue"
       >
         <View style={styles.columnAlign}>
