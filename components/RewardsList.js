@@ -39,7 +39,7 @@ export default function RewardsList({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: "flex",
+    display: "flex"
   },
   addReward: {
       width: 50,
