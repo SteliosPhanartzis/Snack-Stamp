@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
         borderWidth: 2
     },
     stampLogo:{
-        width: 45,
-        height: 45,
-        margin: 10,
+        width: 40,
+        height: 40,
+        margin: 5,
         borderWidth: 2,
         borderRadius: 30
     },
