@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     stampLogo:{
         width: 40,
         height: 40,
-        margin: 5,
+        margin: 10,
         borderWidth: 2,
         borderRadius: 30
     },
