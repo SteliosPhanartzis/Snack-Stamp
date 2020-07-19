@@ -18,7 +18,7 @@ export default function App() {
             ({navigation}) => ({
               title: "Rewards List",
               headerRight: () => (
-              <AddRewardButton onNavigate = {navigation}/>
+              <AddRewardButton navigation = { navigation }/>
               ),
             })
           }

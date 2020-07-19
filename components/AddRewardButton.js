@@ -2,11 +2,11 @@ import React from "react";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { StyleSheet, Text} from "react-native";
 
-export default function AddRewardButton ({onNavigate = f => f}){
+export default function AddRewardButton ({navigation = f => f}){
     return (
         <TouchableHighlight 
             style={styles.addReward} 
-            onPress={() => onNavigate.navigate("Add Reward")}
+            onPress={() => navigation.navigate("Add Reward")}
             underlayColor="skyblue">
                 <Text style={styles.addText}>+</Text>
         </TouchableHighlight> 

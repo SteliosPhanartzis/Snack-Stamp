@@ -37,5 +37,5 @@ export const useRewards = () => {
     // }
     setRewards([...rewards]);
   }
-  return{ rewards, addReward, deleteReward }
+  return{ rewards, addReward, loadRewards }
 };

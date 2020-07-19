@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import { StyleSheet, FlatList, Text} from "react-native";
 import RewardsButton from "./RewardsButton";
 import { useRewards } from "../hooks";
-import { TouchableHighlight } from "react-native-gesture-handler";
 
 export default function RewardsList({ navigation }) {
-  const [company, addCompany] = useState();
   // Wait for stored rewards or intake from json
-  const { rewards, addReward } = useRewards();
+  const { rewards, addReward, loadRewards } = useRewards();
+
+  //Reload page on update to Async storage
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      loadRewards();
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   return (
       <>
@@ -26,12 +32,6 @@ export default function RewardsList({ navigation }) {
               )
           }}
         />
-        {/* <TouchableHighlight 
-            style={styles.addReward} 
-            onPress={() => navigation.navigate("Add Reward", addReward)}
-            underlayColor="skyblue">
-                <Text style={styles.addText}>+</Text>
-        </TouchableHighlight> */}
     </>
   );
 }
