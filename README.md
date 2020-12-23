@@ -1,4 +1,4 @@
-# MunchCard
+# Snack Stamp
 
 A virtual punchcard wallet made in React-Native.
 
